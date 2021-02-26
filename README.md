@@ -2,7 +2,7 @@
 
 ![](https://github.com/rainbowxyt0305/pyeasytries/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/rainbowxyt0305/pyeasytries/branch/main/graph/badge.svg)](https://codecov.io/gh/rainbowxyt0305/pyeasytries) ![Release](https://github.com/rainbowxyt0305/pyeasytries/workflows/Release/badge.svg) [![Documentation Status](https://readthedocs.org/projects/pyeasytries/badge/?version=latest)](https://pyeasytries.readthedocs.io/en/latest/?badge=latest)
 
-Python package that create an easy trie [1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[D[D[Ds[1;6C[1;6C[C[C[C[C[C[C[that creates easy tries data structure![D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[D[D[D[D[D[D[C[C[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[D[C[Can easy trie data structure!
+Python package that create an easy trie data structure!
 
 ## Installation
 
