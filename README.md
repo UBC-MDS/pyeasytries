@@ -2,7 +2,7 @@
 
 ![](https://github.com/rainbowxyt0305/pyeasytries/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/rainbowxyt0305/pyeasytries/branch/main/graph/badge.svg)](https://codecov.io/gh/rainbowxyt0305/pyeasytries) ![Release](https://github.com/rainbowxyt0305/pyeasytries/workflows/Release/badge.svg) [![Documentation Status](https://readthedocs.org/projects/pyeasytries/badge/?version=latest)](https://pyeasytries.readthedocs.io/en/latest/?badge=latest)
 
-Python package that create an easy trie data structure!
+Python package that creates an easy trie data structure!
 
 ## Installation
 
