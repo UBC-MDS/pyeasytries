@@ -30,6 +30,12 @@ The official documentation is hosted on Read the Docs: https://pyeasytries.readt
 
 We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/rainbowxyt0305/pyeasytries/graphs/contributors).
 
+Current contributers:
+- Rachel(Yuting) Xu
+- Mitchie(Yiqi) Zhao
+- Kaicheng Tan
+- Jordan Lau
+
 ### Credits
 
 This package was created with Cookiecutter and the UBC-MDS/cookiecutter-ubc-mds project template, modified from the [pyOpenSci/cookiecutter-pyopensci](https://github.com/pyOpenSci/cookiecutter-pyopensci) project template and the [audreyr/cookiecutter-pypackage](https://github.com/audreyr/cookiecutter-pypackage).
