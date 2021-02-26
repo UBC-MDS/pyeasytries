@@ -27,6 +27,9 @@ Within `Class Trie`:
 - `add(self, word_to_add)` function takes in a word and stores each letter of the new word in the trie data structure.
 - `delete(self, word_to_delete)` function takes in a word and deletes the letters of the word if they are contained in the trie already.
 
+## Python Ecosystem 
+This `pyeasytries` package aims to simplify and speed up the process of searching through a fixed dictionary. In addition to time complexity benefits, a tries data structure also allows to search for given words inside the fixed dictionary when given a prefix. Users who are building a search/filter bar from a fixed dictionary will find this package useful! As trie is a famous data structure, there are currently some similar packages in Python such as  [pygtrie](https://pypi.org/project/pygtrie/). 
+
 
 ## Dependencies
 
