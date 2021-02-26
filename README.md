@@ -2,7 +2,13 @@
 
 ![](https://github.com/rainbowxyt0305/pyeasytries/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/rainbowxyt0305/pyeasytries/branch/main/graph/badge.svg)](https://codecov.io/gh/rainbowxyt0305/pyeasytries) ![Release](https://github.com/rainbowxyt0305/pyeasytries/workflows/Release/badge.svg) [![Documentation Status](https://readthedocs.org/projects/pyeasytries/badge/?version=latest)](https://pyeasytries.readthedocs.io/en/latest/?badge=latest)
 
-Python package that creates an easy trie data structure!
+The pyeasytries package contains classes and functions that efficiently store and search words passed by the user based on trie data structure.
+
+This package was developed as a project for DSCI-524.
+
+
+## Overview
+Storing and searching words can be expensive in terms of time and computing: for example, using a balanced binary search tree, the time complexity for searching a word is $O(mlogn)$, where $m$ is the length of the word and $n$ is the number of keys in the tree. However, with the trie data structure, the time complexity for searching can be reduced to $O(m)$. The `pyeasytries` package is a simple tool to aid word insertion, deletion, and searching in the trie structure. Users can pass any words to be stored for later-on searching or printing with certain prefix, and even modify the words in storage.
 
 ## Installation
 
@@ -12,11 +18,19 @@ $ pip install -i https://test.pypi.org/simple/ pyeasytries
 
 ## Features
 
-- TODO
+- `Class TrieNode`: creates a trie node.
+- `Class Trie`: initializes a trie structure with or without adding any words.
+
+Within `Class Trie`:
+- `contain(self, word)` function takes in a word and searches through the trie structure to check if it has been stored in the trie already.
+- `find_prefix(self, prefix)` function takes in a prefix string and searches through the trie structure and returns a list of all words stored with the given prefix.
+- `add(self, word_to_add)` function takes in a word and stores each letter of the new word in the trie data structure.
+- `delete(self, word_to_delete)` function takes in a word and deletes the letters of the word if they are contained in the trie already.
+
 
 ## Dependencies
 
-- TODO
+Python 3.8 or greater
 
 ## Usage
 
