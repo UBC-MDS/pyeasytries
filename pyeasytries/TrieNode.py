@@ -9,8 +9,8 @@ class TrieNode:
         if not isinstance(is_complete_word, bool):
             raise TypeError("is_complete_word must be of type bool")
 
-        if not (isinstance(children, dict) or children is None):
-            raise TypeError("children must be of type dict or NoneType")
+        if not isinstance(children, dict):
+            raise TypeError("children must be of type dict")
 
         self.children = children
         self.is_complete_word = is_complete_word
