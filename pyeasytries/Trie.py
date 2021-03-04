@@ -27,7 +27,26 @@ class Trie:
         >>> trie.contain("hello")
         TRUE
         """
-        raise NotImplementedError()
+        # change the input string to lowercase
+        if not type(word) is str: 
+            raise TypeError("The input word must be a string")
+        if not word.isalpha():
+            raise Exception("The input word must contain letters only")
+
+        word = word.lower()
+        node = self.root
+        
+        # check if the word is in the Trie
+        for ch in word:
+            if ch in node.children:
+                node = node.children[ch]
+            else: 
+                return False
+        if node.is_complete_word:
+            return True
+        else:
+            return False
+            
 
     def find_prefix(self, prefix):
         """
