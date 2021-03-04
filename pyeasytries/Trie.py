@@ -31,7 +31,7 @@ class Trie:
         if not type(word) is str: 
             raise TypeError("The input word must be a string")
         if not word.isalpha():
-            raise Exception("The input word must contain letters only")
+            raise ValueError("The input word must contain letters only")
 
         word = word.lower()
         node = self.root
