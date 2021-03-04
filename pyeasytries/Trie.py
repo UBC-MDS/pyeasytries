@@ -1,4 +1,4 @@
-from TrieNode import TrieNode
+from pyeasytries.TrieNode import TrieNode
 
 
 class Trie:

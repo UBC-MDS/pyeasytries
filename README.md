@@ -2,13 +2,12 @@
 
 ![](https://github.com/rainbowxyt0305/pyeasytries/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/rainbowxyt0305/pyeasytries/branch/main/graph/badge.svg)](https://codecov.io/gh/rainbowxyt0305/pyeasytries) ![Release](https://github.com/rainbowxyt0305/pyeasytries/workflows/Release/badge.svg) [![Documentation Status](https://readthedocs.org/projects/pyeasytries/badge/?version=latest)](https://pyeasytries.readthedocs.io/en/latest/?badge=latest)
 
-The pyeasytries package contains classes and functions that efficiently store and search words passed by the user based on trie data structure.
+The pyeasytries package contains classes and functions that efficiently store and search words passed by the user based on a trie data structure.
 
-This package was developed as a project for DSCI-524.
-
+This package was developed as a project for UBC MDS-Vancouver program DSCI 524 course.
 
 ## Overview
-Storing and searching words can be expensive in terms of time and computing: for example, using a balanced binary search tree, the time complexity for searching a word is $O(mlogn)$, where $m$ is the length of the word and $n$ is the number of keys in the tree. However, with the trie data structure, the time complexity for searching can be reduced to $O(m)$. The `pyeasytries` package is a simple tool to aid word insertion, deletion, and searching in the trie structure. Users can pass any words to be stored for later-on searching or printing with certain prefix, and even modify the words in storage.
+Storing and searching words can be expensive in terms of time and computing: for example, using a balanced binary search tree, the time complexity for searching a word is $O(mlogn)$, where $m$ is the length of the word and $n$ is the number of keys in the tree. However, with the trie data structure, the time complexity for searching can be reduced to $O(m)$. The `pyeasytries` package is a simple tool to aid word insertion, deletion, and searching in the trie data structure. Users can pass any words to be stored for later-on searching or printing with certain prefix, and even modify the words in storage.
 
 ## Installation
 
@@ -19,7 +18,7 @@ $ pip install -i https://test.pypi.org/simple/ pyeasytries
 ## Features
 
 - `Class TrieNode`: creates a trie node.
-- `Class Trie`: initializes a trie structure with or without adding any words.
+- `Class Trie`: initializes a trie data structure with or without adding any words.
 
 Within `Class Trie`:
 - `contain(self, word)` function takes in a word and searches through the trie structure to check if it has been stored in the trie already.
@@ -29,7 +28,6 @@ Within `Class Trie`:
 
 ## Python Ecosystem 
 This `pyeasytries` package aims to simplify and speed up the process of searching through a fixed dictionary. In addition to time complexity benefits, a tries data structure also allows to search for given words inside the fixed dictionary when given a prefix. Users who are building a search/filter bar from a fixed dictionary will find this package useful! As trie is a famous data structure, there are currently some similar packages in Python such as  [pygtrie](https://pypi.org/project/pygtrie/). 
-
 
 ## Dependencies
 
@@ -45,7 +43,7 @@ The official documentation is hosted on Read the Docs: https://pyeasytries.readt
 
 ## Contributors
 
-We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/rainbowxyt0305/pyeasytries/graphs/contributors).
+We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/UBC-MDS/pyeasytries/graphs/contributors).
 
 Current contributers:
 - Rachel(Yuting) Xu
