@@ -3,11 +3,10 @@ from pyeasytries.TrieNode import TrieNode
 
 class Trie:
     """This is a conceptual class representation of a Trie
-
-    :param word_list: List of words to be added when building the trie, can be empty
     """
-    def __init__(self, word_list=None):
-        raise NotImplementedError()
+
+    def __init__(self):
+        self.root = TrieNode(is_complete_word=False, children=dict())
 
     def contain(self, word):
         """
@@ -25,7 +24,7 @@ class Trie:
         --------
         >>> from TrieNode import TrieNode
         >>> trie = Trie()
-        >>> trie.contains("hello")
+        >>> trie.contain("hello")
         TRUE
         """
         raise NotImplementedError()
@@ -67,7 +66,7 @@ class Trie:
         --------
         >>> from TrieNode import TrieNode
         >>> trie = Trie()
-        >>> trie.word_to_add("firetruck")
+        >>> trie.add("firetruck")
         TRUE 
         """
         
@@ -89,7 +88,7 @@ class Trie:
         --------
         >>> from TrieNode import TrieNode
         >>> trie = Trie()
-        >>> trie.word_to_delete("firetruck")
-        TRUE 
+        >>> trie.delete("firetruck")
+        TRUE
         """
         raise NotImplementedError()
