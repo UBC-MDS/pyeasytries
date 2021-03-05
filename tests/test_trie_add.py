@@ -25,7 +25,7 @@ def test_add_empty_string():
      with pytest.raises(ValueError):
          trie.add("")
 
-def test_sucessfully_add_word():
+def test_add_sucessfully_add_word():
     trie = Trie()
 
     #  root
