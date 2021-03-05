@@ -9,7 +9,7 @@ def test_version():
     assert __version__ == '0.1.0'
 
 
-def test_correctly_delete_existing_word():
+def test_delete_correctly_delete_existing_word():
     trie = Trie()
     trie.root.children = {
         'a': TrieNode(is_complete_word=False, children={
@@ -30,7 +30,7 @@ def test_correctly_delete_existing_word():
     assert not trie.root.children
 
 
-def test_correctly_not_delete_non_existing_word():
+def test_delete_correctly_not_delete_non_existing_word():
     trie = Trie()
     trie.root.children = {
         'a': TrieNode(is_complete_word=False, children={
@@ -52,7 +52,7 @@ def test_correctly_not_delete_non_existing_word():
     assert trie.root.children["a"].children["d"].is_complete_word
 
 
-def test_correctly_not_delete_non_existing_word_with_existing_prefix():
+def test_delete_correctly_not_delete_non_existing_word_with_existing_prefix():
     trie = Trie()
     trie.root.children = {
         'a': TrieNode(is_complete_word=False, children={
@@ -75,7 +75,7 @@ def test_correctly_not_delete_non_existing_word_with_existing_prefix():
     assert "x" not in trie.root.children["a"].children
 
 
-def test_correctly_delete_partial_tree_nodes():
+def test_delete_correctly_delete_partial_tree_nodes():
     trie = Trie()
     trie.root.children = {
         'a': TrieNode(is_complete_word=False, children={
@@ -104,7 +104,7 @@ def test_correctly_delete_partial_tree_nodes():
     assert "c" not in trie.root.children["a"].children
 
 
-def test_correctly_delete_nested_word():
+def test_delete_correctly_delete_nested_word():
     trie = Trie()
     trie.root.children = {
         'b': TrieNode(is_complete_word=False, children={
@@ -138,14 +138,14 @@ def test_correctly_delete_nested_word():
     assert trie.root.children["b"].children["e"].children["d"].is_complete_word
 
 
-def test_report_error_on_invalid_argument_type():
+def test_delete_report_error_on_invalid_argument_type():
     trie = Trie()
 
     with pytest.raises(TypeError):
         trie.delete(2567)
 
 
-def test_report_error_on_empty_word_argument():
+def test_delete_report_error_on_empty_word_argument():
     trie = Trie()
 
     with pytest.raises(ValueError):
