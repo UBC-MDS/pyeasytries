@@ -1,6 +1,7 @@
 from pyeasytries import __version__
 from pyeasytries.TrieNode import TrieNode
 from pyeasytries import Trie
+import pytest
 
 
 def test_version():
@@ -81,3 +82,17 @@ def test_prefix_is_whole_word():
     assert "b" in trie.root.children
     assert "e" in trie.root.children["b"].children
     assert trie.root.children["b"].children["e"].is_complete_word
+
+
+def test_prefix_is_string():
+    trie = Trie()
+
+    with pytest.raises(TypeError):
+        trie.find_prefix(2021)
+
+
+def test_prefix_is_empty():
+    trie = Trie()
+
+    with pytest.raises(ValueError):
+        trie.find_prefix("")
