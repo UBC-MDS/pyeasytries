@@ -4,7 +4,6 @@ from pyeasytries.TrieNode import TrieNode
 class Trie:
     """This is a conceptual class representation of a Trie
     """
-
     def __init__(self):
         self.root = TrieNode(is_complete_word=False, children=dict())
 
@@ -29,6 +28,22 @@ class Trie:
         """
         raise NotImplementedError()
 
+    @staticmethod
+    def __find_prefix__(node, words, prefix):
+        """
+        Private helper function for find_prefix.
+        Cycles through all children of node recursively,
+        adding them to words if they constitue whole words.
+        """
+        if node.is_complete_word:
+            words.append(prefix)
+
+        if not node.children:
+            return
+
+        for char in node.children:
+            Trie.__find_prefix__(node.children[char], words, prefix + char)
+
     def find_prefix(self, prefix):
         """
         Finds all words that match the prefix in the trie
@@ -48,7 +63,22 @@ class Trie:
         >>> trie.find_prefix("he")
         ["hello", "help", "hear"]
         """
-        raise NotImplementedError()
+        if not isinstance(prefix, str):
+            raise TypeError("prefix must be a string")
+
+        if not prefix:
+            raise ValueError("prefix must not be empty")
+
+        words = list()
+        current = self.root
+        for char in prefix:
+            if char not in current.children:
+                return words
+            current = current.children[char]
+
+        # Step 2: use helper function __find_prefix__
+        Trie.__find_prefix__(current, words, prefix)
+        return words
 
     def add(self, word_to_add):
         """
@@ -69,7 +99,7 @@ class Trie:
         >>> trie.add("firetruck")
         TRUE 
         """
-        
+
         raise NotImplementedError()
 
     def delete(self, word_to_delete):
