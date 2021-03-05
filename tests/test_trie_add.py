@@ -20,7 +20,7 @@ def test_add_word_is_string():
      with pytest.raises(TypeError):
          trie.add(23)
 
-def test_empty_string():
+def test_add_empty_string():
      trie = Trie()       
      with pytest.raises(ValueError):
          trie.add("")
