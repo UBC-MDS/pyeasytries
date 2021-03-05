@@ -15,7 +15,7 @@ def test_add_existing_word():
     trie.add("hello")
     assert ((trie.add("hello")) == False)
 
-def test_word_is_string():
+def test_add_word_is_string():
      trie = Trie()  
      with pytest.raises(TypeError):
          trie.add(23)
