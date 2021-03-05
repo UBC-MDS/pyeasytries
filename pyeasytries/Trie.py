@@ -69,7 +69,7 @@ class Trie:
         >>> trie.add("firetruck")
         TRUE 
         """
-
+        
         raise NotImplementedError()
 
     @staticmethod
