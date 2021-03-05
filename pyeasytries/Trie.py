@@ -69,8 +69,28 @@ class Trie:
         >>> trie.add("firetruck")
         TRUE 
         """
+        node = self.root
         
-        raise NotImplementedError()
+        #raise an error if input is not a string 
+        if type(word_to_add) != str:
+            raise TypeError("The input is not a string.")
+        if word_to_add == "":
+            raise ValueError("The input is an empty string")
+            
+        for char in word_to_add:
+            if char in node.children:
+                node = node.children[char]
+                
+            else:
+                new_node = TrieNode(is_complete_word=False, children=dict())
+                node.children[char] = new_node
+                node = new_node
+        
+        if not node.is_complete_word:
+            node.is_complete_word = True
+            return True
+        
+        return False
 
     def delete(self, word_to_delete):
         """
