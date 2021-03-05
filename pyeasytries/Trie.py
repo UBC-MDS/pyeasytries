@@ -4,7 +4,6 @@ from pyeasytries.TrieNode import TrieNode
 class Trie:
     """This is a conceptual class representation of a Trie
     """
-
     def __init__(self):
         self.root = TrieNode(is_complete_word=False, children=dict())
 
@@ -27,7 +26,41 @@ class Trie:
         >>> trie.contain("hello")
         TRUE
         """
-        raise NotImplementedError()
+        # change the input string to lowercase
+        if not type(word) is str:
+            raise TypeError("The input word must be a string")
+        if not word.isalpha():
+            raise ValueError("The input word must contain letters only")
+
+        word = word.lower()
+        node = self.root
+
+        # check if the word is in the Trie
+        for ch in word:
+            if ch in node.children:
+                node = node.children[ch]
+            else:
+                return False
+        if node.is_complete_word:
+            return True
+        else:
+            return False
+
+    @staticmethod
+    def __find_prefix__(node, words, prefix):
+        """
+        Private helper function for find_prefix.
+        Cycles through all children of node recursively,
+        adding them to words if they constitue whole words.
+        """
+        if node.is_complete_word:
+            words.append(prefix)
+
+        if not node.children:
+            return
+
+        for char in node.children:
+            Trie.__find_prefix__(node.children[char], words, prefix + char)
 
     def find_prefix(self, prefix):
         """
@@ -48,7 +81,22 @@ class Trie:
         >>> trie.find_prefix("he")
         ["hello", "help", "hear"]
         """
-        raise NotImplementedError()
+        if not isinstance(prefix, str):
+            raise TypeError("prefix must be a string")
+
+        if not prefix:
+            raise ValueError("prefix must not be empty")
+
+        words = list()
+        current = self.root
+        for char in prefix:
+            if char not in current.children:
+                return words
+            current = current.children[char]
+
+        # Step 2: use helper function __find_prefix__
+        Trie.__find_prefix__(current, words, prefix)
+        return words
 
     def add(self, word_to_add):
         """
@@ -70,26 +118,26 @@ class Trie:
         TRUE 
         """
         node = self.root
-        
-        #raise an error if input is not a string 
+
+        #raise an error if input is not a string
         if type(word_to_add) != str:
             raise TypeError("The input is not a string.")
         if word_to_add == "":
             raise ValueError("The input is an empty string")
-            
+
         for char in word_to_add:
             if char in node.children:
                 node = node.children[char]
-                
+
             else:
                 new_node = TrieNode(is_complete_word=False, children=dict())
                 node.children[char] = new_node
                 node = new_node
-        
+
         if not node.is_complete_word:
             node.is_complete_word = True
             return True
-        
+
         return False
 
     @staticmethod
@@ -108,7 +156,8 @@ class Trie:
         if word_to_delete[0] not in cur.children:
             return False, False
 
-        delete_success, remove_link = Trie.__delete__(cur.children[word_to_delete[0]], word_to_delete[1:])
+        delete_success, remove_link = Trie.__delete__(
+            cur.children[word_to_delete[0]], word_to_delete[1:])
 
         if not delete_success:
             return False, False
