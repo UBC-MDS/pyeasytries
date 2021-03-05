@@ -99,7 +99,6 @@ class Trie:
         >>> trie.add("firetruck")
         TRUE 
         """
-
         raise NotImplementedError()
 
     def delete(self, word_to_delete):
