@@ -5,6 +5,12 @@ import pytest
 
 
 def test_contain_missing_word():
+    '''
+    This test creates a trie that has 2 words `act` and `ad`, 
+    which is used for searching a word that is not present in the trie: `ac`. 
+    This test should check if the return value is `False`, 
+    and check the presence of each letter in the trie.
+    '''
     trie = Trie()
     trie.root.children = {
         'a':
@@ -36,6 +42,11 @@ def test_contain_missing_word():
     assert not trie.root.children["a"].children["c"].is_complete_word
 
 def test_contain_missing_word2():
+    '''
+    This test creates a trie that has 2 words `act` and `ad`, 
+    which is used for searching a word that is not present in the trie: `bag`. 
+    This test should check if the return value is `False`.
+    '''
     trie = Trie()
     trie.root.children = {
         'a': TrieNode(is_complete_word=False, children={
@@ -58,6 +69,12 @@ def test_contain_missing_word2():
     assert contain_word == False
 
 def test_contain_existing_word():
+    '''
+    This test creates a trie that has 2 words `act` and `ad`, 
+    which is used for searching a word that is present in the trie: `AD`. 
+    This test should check if the return value is `True`, 
+    and check the presence of each letter in the trie.
+    '''
 
     trie = Trie()
     trie.root.children = {
@@ -91,6 +108,10 @@ def test_contain_existing_word():
 
 
 def test_contain_report_error_on_invalid_argument_type():
+    '''
+    This test creates an empty trie and test if the function will throw a `TypeError` 
+    when inputting an integer.
+    '''
     trie = Trie()
 
     with pytest.raises(TypeError):
@@ -98,6 +119,10 @@ def test_contain_report_error_on_invalid_argument_type():
 
 
 def test_contain_report_error_on_invalid_word():
+     '''
+    This test creates an empty trie and test if the function will throw a `ValueError` 
+    when the input word contains numbers or symbols.
+    '''
     trie = Trie()
 
     with pytest.raises(ValueError):
