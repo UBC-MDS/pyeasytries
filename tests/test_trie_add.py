@@ -25,17 +25,17 @@ def test_add_word_is_string():
     """
     this test function tests if the add function will give a TypeError when inserting something other than a string 
     """
-     trie = Trie()  
-     with pytest.raises(TypeError):
-         trie.add(23)
+    trie = Trie()  
+    with pytest.raises(TypeError):
+        trie.add(23)
 
 def test_add_empty_string():
     """
     this test function tests if the add function will give a ValueError when inserting an empty string
     """
-     trie = Trie()       
-     with pytest.raises(ValueError):
-         trie.add("")
+    trie = Trie()       
+    with pytest.raises(ValueError):
+        trie.add("")
 
 def test_add_sucessfully_add_word():
     """
