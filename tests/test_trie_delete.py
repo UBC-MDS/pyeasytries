@@ -10,6 +10,9 @@ def test_version():
 
 
 def test_delete_correctly_delete_existing_word():
+    """
+    Test if delete will remove existing words as well as sub-trees that contains no words.
+    """
     trie = Trie()
     trie.root.children = {
         'a': TrieNode(is_complete_word=False, children={
@@ -31,6 +34,9 @@ def test_delete_correctly_delete_existing_word():
 
 
 def test_delete_correctly_not_delete_non_existing_word():
+    """
+    Test if delete will do nothing if a non-existing word is passed to delete
+    """
     trie = Trie()
     trie.root.children = {
         'a': TrieNode(is_complete_word=False, children={
@@ -76,6 +82,9 @@ def test_delete_correctly_not_delete_non_existing_word_with_existing_prefix():
 
 
 def test_delete_correctly_delete_partial_tree_nodes():
+    """
+    Test if delete removes the right sub-tree that no longer contains any word.
+    """
     trie = Trie()
     trie.root.children = {
         'a': TrieNode(is_complete_word=False, children={
@@ -105,6 +114,9 @@ def test_delete_correctly_delete_partial_tree_nodes():
 
 
 def test_delete_correctly_delete_nested_word():
+    """
+    Test if delete will retain the sub-tree if it still contains words.
+    """
     trie = Trie()
     trie.root.children = {
         'b': TrieNode(is_complete_word=False, children={
@@ -139,6 +151,9 @@ def test_delete_correctly_delete_nested_word():
 
 
 def test_delete_report_error_on_invalid_argument_type():
+    """
+    Test if delete will throw an error if a non-string argument is passed.
+    """
     trie = Trie()
 
     with pytest.raises(TypeError):
@@ -146,6 +161,9 @@ def test_delete_report_error_on_invalid_argument_type():
 
 
 def test_delete_report_error_on_empty_word_argument():
+    """
+    Test if delete will throw an error if an empty string is passed.
+    """
     trie = Trie()
 
     with pytest.raises(ValueError):
