@@ -9,6 +9,9 @@ def test_version():
 
 
 def test_prefix_not_found():
+    """
+    Test if the prefix the user passes in the find_prefix function is found in the Trie
+    """
     trie = Trie()
     trie.root.children = {
         'b':
@@ -47,6 +50,9 @@ def test_prefix_not_found():
 
 
 def test_prefix_is_whole_word():
+    """
+    Test if the prefix the user passes in the find_prefix function is actually itself a whole word
+    """
     trie = Trie()
     trie.root.children = {
         'b':
@@ -85,6 +91,9 @@ def test_prefix_is_whole_word():
 
 
 def test_prefix_is_string():
+    """
+    Test if find_prefix actually throws an error when the user passes in a non-string type prefix
+    """
     trie = Trie()
 
     with pytest.raises(TypeError):
@@ -92,6 +101,9 @@ def test_prefix_is_string():
 
 
 def test_prefix_is_empty():
+    """
+    Test if find_prefix actually throws an error when the user passes in an empty prefix
+    """
     trie = Trie()
 
     with pytest.raises(ValueError):
