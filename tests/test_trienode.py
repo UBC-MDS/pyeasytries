@@ -10,7 +10,8 @@ def test_version():
 
 def test_trienode_report_error_on_invalid_is_complete_word_argument_type():
     """
-    Test if TrieNode will throw an error if a non-boolean value is passed to is_complete_word.
+    Test if TrieNode will throw an error if a non-boolean value
+        is passed to is_complete_word.
     """
     with pytest.raises(TypeError):
         TrieNode(is_complete_word='incorrect type', children=dict())
@@ -18,7 +19,8 @@ def test_trienode_report_error_on_invalid_is_complete_word_argument_type():
 
 def test_trienode_report_error_on_invalid_children_argument_type():
     """
-    Test if TrieNode will throw an error if a non-dict value is passed to children.
+    Test if TrieNode will throw an error if a non-dict value
+        is passed to children.
     """
     with pytest.raises(TypeError):
         TrieNode(is_complete_word=False, children="string")
