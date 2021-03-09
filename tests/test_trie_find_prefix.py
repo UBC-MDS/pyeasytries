@@ -1,7 +1,8 @@
+import pytest
+
+from pyeasytries import Trie
 from pyeasytries import __version__
 from pyeasytries.TrieNode import TrieNode
-from pyeasytries import Trie
-import pytest
 
 
 def test_version():
@@ -10,26 +11,19 @@ def test_version():
 
 def test_prefix_not_found():
     """
-    Test if the prefix the user passes in the find_prefix function is found in the Trie
+    Test if the prefix the user passes in the find_prefix
+        function is found in the Trie
     """
     trie = Trie()
     trie.root.children = {
-        'b':
-        TrieNode(is_complete_word=False,
-                 children={
-                     'a':
-                     TrieNode(is_complete_word=False,
-                              children={
-                                  'd': TrieNode(is_complete_word=True,
-                                                children={})
-                              }),
-                     'e':
-                     TrieNode(is_complete_word=True,
-                              children={
-                                  'e': TrieNode(is_complete_word=True,
-                                                children={})
-                              })
-                 })
+        'b': TrieNode(is_complete_word=False, children={
+            'a': TrieNode(is_complete_word=False, children={
+                'd': TrieNode(is_complete_word=True, children={})
+            }),
+            'e': TrieNode(is_complete_word=True, children={
+                'e': TrieNode(is_complete_word=True, children={})
+            })
+        })
     }
     #     root
     #      /
@@ -51,26 +45,19 @@ def test_prefix_not_found():
 
 def test_prefix_is_whole_word():
     """
-    Test if the prefix the user passes in the find_prefix function is actually itself a whole word
+    Test if the prefix the user passes in the find_prefix
+        function is actually itself a whole word
     """
     trie = Trie()
     trie.root.children = {
-        'b':
-        TrieNode(is_complete_word=False,
-                 children={
-                     'a':
-                     TrieNode(is_complete_word=False,
-                              children={
-                                  'd': TrieNode(is_complete_word=True,
-                                                children={})
-                              }),
-                     'e':
-                     TrieNode(is_complete_word=True,
-                              children={
-                                  'e': TrieNode(is_complete_word=True,
-                                                children={})
-                              })
-                 })
+        'b': TrieNode(is_complete_word=False, children={
+            'a': TrieNode(is_complete_word=False, children={
+                'd': TrieNode(is_complete_word=True, children={})
+            }),
+            'e': TrieNode(is_complete_word=True, children={
+                'e': TrieNode(is_complete_word=True, children={})
+            })
+        })
     }
     #     root
     #      /
@@ -92,7 +79,8 @@ def test_prefix_is_whole_word():
 
 def test_prefix_is_string():
     """
-    Test if find_prefix actually throws an error when the user passes in a non-string type prefix
+    Test if find_prefix actually throws an error when the user
+        passes in a non-string type prefix
     """
     trie = Trie()
 
@@ -102,7 +90,8 @@ def test_prefix_is_string():
 
 def test_prefix_is_empty():
     """
-    Test if find_prefix actually throws an error when the user passes in an empty prefix
+    Test if find_prefix actually throws an error when the user
+        passes in an empty prefix
     """
     trie = Trie()
 
