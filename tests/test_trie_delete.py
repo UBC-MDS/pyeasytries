@@ -11,7 +11,8 @@ def test_version():
 
 def test_delete_correctly_delete_existing_word():
     """
-    Test if delete will remove existing words as well as sub-trees that contains no words.
+    Test if delete will remove existing words as well as sub-trees that
+    contains no words.
     """
     trie = Trie()
     trie.root.children = {
