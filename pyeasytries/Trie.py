@@ -25,6 +25,7 @@ class Trie:
         --------
         >>> from TrieNode import TrieNode
         >>> trie = Trie()
+        >>> trie.add("hello")
         >>> trie.contain("hello")
         TRUE
         """
@@ -81,6 +82,9 @@ class Trie:
         --------
         >>> from TrieNode import TrieNode
         >>> trie = Trie()
+        >>> trie.add("hello")
+        >>> trie.add("help")
+        >>> trie.add("hear")
         >>> trie.find_prefix("he")
         ["hello", "help", "hear"]
         """
@@ -192,6 +196,7 @@ class Trie:
         --------
         >>> from TrieNode import TrieNode
         >>> trie = Trie()
+        >>> trie.add("firetruck")
         >>> trie.delete("firetruck")
         TRUE
         """
