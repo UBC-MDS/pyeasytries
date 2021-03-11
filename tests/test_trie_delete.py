@@ -1,12 +1,7 @@
 import pytest
 
 from pyeasytries import Trie
-from pyeasytries import __version__
 from pyeasytries.TrieNode import TrieNode
-
-
-def test_version():
-    assert __version__ == '0.1.0'
 
 
 def test_delete_correctly_delete_existing_word():
@@ -16,9 +11,10 @@ def test_delete_correctly_delete_existing_word():
     """
     trie = Trie()
     trie.root.children = {
-        'a': TrieNode(is_complete_word=False, children={
-            'd': TrieNode(is_complete_word=True, children=dict())
-        })
+        'a':
+        TrieNode(
+            is_complete_word=False,
+            children={'d': TrieNode(is_complete_word=True, children=dict())})
     }
     #   root
     #    |
@@ -40,9 +36,10 @@ def test_delete_correctly_not_delete_non_existing_word():
     """
     trie = Trie()
     trie.root.children = {
-        'a': TrieNode(is_complete_word=False, children={
-            'd': TrieNode(is_complete_word=True, children=dict())
-        })
+        'a':
+        TrieNode(
+            is_complete_word=False,
+            children={'d': TrieNode(is_complete_word=True, children=dict())})
     }
     #   root
     #    |
@@ -62,9 +59,10 @@ def test_delete_correctly_not_delete_non_existing_word():
 def test_delete_correctly_not_delete_non_existing_word_with_existing_prefix():
     trie = Trie()
     trie.root.children = {
-        'a': TrieNode(is_complete_word=False, children={
-            'd': TrieNode(is_complete_word=True, children=dict())
-        })
+        'a':
+        TrieNode(
+            is_complete_word=False,
+            children={'d': TrieNode(is_complete_word=True, children=dict())})
     }
     #   root
     #    |
@@ -88,10 +86,12 @@ def test_delete_correctly_delete_partial_tree_nodes():
     """
     trie = Trie()
     trie.root.children = {
-        'a': TrieNode(is_complete_word=False, children={
-            'd': TrieNode(is_complete_word=True, children=dict()),
-            'c': TrieNode(is_complete_word=True, children=dict())
-        })
+        'a':
+        TrieNode(is_complete_word=False,
+                 children={
+                     'd': TrieNode(is_complete_word=True, children=dict()),
+                     'c': TrieNode(is_complete_word=True, children=dict())
+                 })
     }
     #   root
     #    |
@@ -120,11 +120,17 @@ def test_delete_correctly_delete_nested_word():
     """
     trie = Trie()
     trie.root.children = {
-        'b': TrieNode(is_complete_word=False, children={
-            'e': TrieNode(is_complete_word=True, children={
-                'd': TrieNode(is_complete_word=True, children=dict())
-            })
-        })
+        'b':
+        TrieNode(is_complete_word=False,
+                 children={
+                     'e':
+                     TrieNode(is_complete_word=True,
+                              children={
+                                  'd':
+                                  TrieNode(is_complete_word=True,
+                                           children=dict())
+                              })
+                 })
     }
     #   root
     #    |
