@@ -1,12 +1,7 @@
 import pytest
 
 from pyeasytries import Trie
-from pyeasytries import __version__
 from pyeasytries.TrieNode import TrieNode
-
-
-def test_version():
-    assert __version__ == '0.1.0'
 
 
 def test_prefix_not_found():
@@ -16,14 +11,22 @@ def test_prefix_not_found():
     """
     trie = Trie()
     trie.root.children = {
-        'b': TrieNode(is_complete_word=False, children={
-            'a': TrieNode(is_complete_word=False, children={
-                'd': TrieNode(is_complete_word=True, children={})
-            }),
-            'e': TrieNode(is_complete_word=True, children={
-                'e': TrieNode(is_complete_word=True, children={})
-            })
-        })
+        'b':
+        TrieNode(is_complete_word=False,
+                 children={
+                     'a':
+                     TrieNode(is_complete_word=False,
+                              children={
+                                  'd': TrieNode(is_complete_word=True,
+                                                children={})
+                              }),
+                     'e':
+                     TrieNode(is_complete_word=True,
+                              children={
+                                  'e': TrieNode(is_complete_word=True,
+                                                children={})
+                              })
+                 })
     }
     #     root
     #      /
@@ -50,14 +53,22 @@ def test_prefix_is_whole_word():
     """
     trie = Trie()
     trie.root.children = {
-        'b': TrieNode(is_complete_word=False, children={
-            'a': TrieNode(is_complete_word=False, children={
-                'd': TrieNode(is_complete_word=True, children={})
-            }),
-            'e': TrieNode(is_complete_word=True, children={
-                'e': TrieNode(is_complete_word=True, children={})
-            })
-        })
+        'b':
+        TrieNode(is_complete_word=False,
+                 children={
+                     'a':
+                     TrieNode(is_complete_word=False,
+                              children={
+                                  'd': TrieNode(is_complete_word=True,
+                                                children={})
+                              }),
+                     'e':
+                     TrieNode(is_complete_word=True,
+                              children={
+                                  'e': TrieNode(is_complete_word=True,
+                                                children={})
+                              })
+                 })
     }
     #     root
     #      /

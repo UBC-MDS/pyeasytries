@@ -13,12 +13,18 @@ def test_contain_missing_word():
     """
     trie = Trie()
     trie.root.children = {
-        'a': TrieNode(is_complete_word=False, children={
-            'c': TrieNode(is_complete_word=False, children={
-                't': TrieNode(is_complete_word=True, children={})
-            }),
-            'd': TrieNode(is_complete_word=True, children={})
-        })
+        'a':
+        TrieNode(is_complete_word=False,
+                 children={
+                     'c':
+                     TrieNode(is_complete_word=False,
+                              children={
+                                  't': TrieNode(is_complete_word=True,
+                                                children={})
+                              }),
+                     'd':
+                     TrieNode(is_complete_word=True, children={})
+                 })
     }
     #  root
     #   |
@@ -44,12 +50,18 @@ def test_contain_missing_word2():
     """
     trie = Trie()
     trie.root.children = {
-        'a': TrieNode(is_complete_word=False, children={
-            'c': TrieNode(is_complete_word=False, children={
-                't': TrieNode(is_complete_word=True, children={})
-            }),
-            'd': TrieNode(is_complete_word=True, children={})
-        })
+        'a':
+        TrieNode(is_complete_word=False,
+                 children={
+                     'c':
+                     TrieNode(is_complete_word=False,
+                              children={
+                                  't': TrieNode(is_complete_word=True,
+                                                children={})
+                              }),
+                     'd':
+                     TrieNode(is_complete_word=True, children={})
+                 })
     }
     #  root
     #   |
@@ -75,12 +87,17 @@ def test_contain_existing_word():
     trie = Trie()
     trie.root.children = {
         'a':
-            TrieNode(is_complete_word=False, children={
-                'c': TrieNode(is_complete_word=False, children={
-                    't': TrieNode(is_complete_word=True, children={})
-                }),
-                'd': TrieNode(is_complete_word=True, children={})
-            })
+        TrieNode(is_complete_word=False,
+                 children={
+                     'c':
+                     TrieNode(is_complete_word=False,
+                              children={
+                                  't': TrieNode(is_complete_word=True,
+                                                children={})
+                              }),
+                     'd':
+                     TrieNode(is_complete_word=True, children={})
+                 })
     }
     #  root
     #   |
