@@ -35,7 +35,61 @@ Python 3.8 or greater
 
 ## Usage
 
-- TODO
+Import package 
+```python 
+from pyeasytries import Trie
+```
+
+Using the `add` Function
+```python 
+trie = Trie()     #initiates Trie 
+trie.add("hey")   #adds the word "hey"to the Trie
+trie.add("hi")    #adds the word "hi" to the Trie
+
+#The current Trie structure will look like this:
+#    root 
+#     |
+#     h
+#    / \
+#  e    i
+#  |
+#  y
+```
+
+Using the `contain` function
+```python
+#Using contain function with a word inside the Trie
+trie.contain("hey")
+>>> TRUE
+
+#using contain function with a word not inside the Trie
+trie.contain("bye")
+>>> FALSE
+```
+
+Using the `find_prefix` function
+```python
+#finds all words starting with the prefix "h"
+trie.find_prefix("h")
+>>> ["hello", "hey"]
+```
+
+Using the `delete` function
+```python
+#delete the word "hi" from the Trie 
+trie.delete("hi")
+>>> TRUE
+
+#The Trie structure after deleting the word "hi" will look like this:
+#    root 
+#     |
+#     h
+#    / 
+#  e    
+#  |
+#  y
+
+```
 
 ## Documentation
 
