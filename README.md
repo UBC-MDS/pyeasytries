@@ -31,7 +31,7 @@ This `pyeasytries` package aims to simplify and speed up the process of searchin
 
 ## Dependencies
 
-Python 3.8 or greater
+Python 3.8 or greater.
 
 ## Usage
 
