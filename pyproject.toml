@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pyeasytries"
-version = "0.1.0"
+version = "0.1.1"
 description = "Python package that creates an easy trie data structure!"
 authors = ["Rachel Xu <rachelxu.sauderfinance@gmail.com>"]
 license = "\"MIT\""
