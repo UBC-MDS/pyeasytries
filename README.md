@@ -1,6 +1,6 @@
 # pyeasytries 
 
-![](https://github.com/UBC-MDS/pyeasytries/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/UBC-MDS/pyeasytries/branch/main/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/pyeasytries) ![Release](https://github.com/UBC-MDS/pyeasytries/workflows/Release/badge.svg) [![Documentation Status](https://readthedocs.org/projects/pyeasytries/badge/?version=latest)](https://pyeasytries.readthedocs.io/en/latest/?badge=latest)
+![](https://github.com/UBC-MDS/pyeasytries/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/UBC-MDS/pyeasytries/branch/main/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/pyeasytries) [![Deploy](https://github.com/UBC-MDS/pyeasytries/actions/workflows/deploy.yml/badge.svg)](https://github.com/UBC-MDS/pyeasytries/actions/workflows/deploy.yml) [![Documentation Status](https://readthedocs.org/projects/pyeasytries/badge/?version=latest)](https://pyeasytries.readthedocs.io/en/latest/?badge=latest)
 
 The pyeasytries package contains classes and functions that efficiently store and search words passed by the user based on a trie data structure.
 
