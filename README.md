@@ -1,18 +1,18 @@
 # pyeasytries 
 
-![](https://github.com/rainbowxyt0305/pyeasytries/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/rainbowxyt0305/pyeasytries/branch/main/graph/badge.svg)](https://codecov.io/gh/rainbowxyt0305/pyeasytries) [![Deploy](https://github.com/UBC-MDS/pyeasytries/actions/workflows/deploy.yml/badge.svg)](https://github.com/UBC-MDS/pyeasytries/actions/workflows/deploy.yml)[![Documentation Status](https://readthedocs.org/projects/pyeasytries/badge/?version=latest)](https://pyeasytries.readthedocs.io/en/latest/?badge=latest)
+![](https://github.com/UBC-MDS/pyeasytries/workflows/build/badge.svg) [![codecov](https://codecov.io/gh/UBC-MDS/pyeasytries/branch/main/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/pyeasytries) [![Deploy](https://github.com/UBC-MDS/pyeasytries/actions/workflows/deploy.yml/badge.svg)](https://github.com/UBC-MDS/pyeasytries/actions/workflows/deploy.yml) [![Documentation Status](https://readthedocs.org/projects/pyeasytries/badge/?version=latest)](https://pyeasytries.readthedocs.io/en/latest/?badge=latest)
 
 The pyeasytries package contains classes and functions that efficiently store and search words passed by the user based on a trie data structure.
 
 This package was developed as a project for UBC MDS-Vancouver program DSCI 524 course.
 
 ## Overview
-Storing and searching words can be expensive in terms of time and computing: for example, using a balanced binary search tree, the time complexity for searching a word is $O(mlogn)$, where $m$ is the length of the word and $n$ is the number of keys in the tree. However, with the trie data structure, the time complexity for searching can be reduced to $O(m)$. The `pyeasytries` package is a simple tool to aid word insertion, deletion, and searching in the trie data structure. Users can pass any words to be stored for later-on searching or printing with certain prefix, and even modify the words in storage.
+Storing and searching words can be expensive in terms of time and computing: for example, using a balanced binary search tree, the time complexity for searching a word is `O(mlog(n))`, where `m` is the length of the word and `n` is the number of keys in the tree. However, with the trie data structure, the time complexity for searching can be reduced to `O(m)`. The `pyeasytries` package is a simple tool to aid word insertion, deletion, and searching in the trie data structure. Users can pass any words to be stored for later-on searching or printing with certain prefix, and even modify the words in storage.
 
 ## Installation
 
 ```bash
-$ pip install -i https://test.pypi.org/simple/ pyeasytries
+pip install -i https://test.pypi.org/simple/ pyeasytries
 ```
 
 ## Features
@@ -31,22 +31,23 @@ This `pyeasytries` package aims to simplify and speed up the process of searchin
 
 ## Dependencies
 
-Python 3.8 or greater
+Python 3.8 or greater.
 
 ## Usage
 
-Import package 
+Import package and initialize an empty trie
 ```python 
 from pyeasytries import Trie
+
+trie = Trie()
 ```
 
-Using the `add` Function
-```python 
-trie = Trie()     #initiates Trie 
+Using the `add` function to add new words to your trie
+```python
 trie.add("hey")   #adds the word "hey"to the Trie
 trie.add("hi")    #adds the word "hi" to the Trie
 
-#The current Trie structure will look like this:
+# The current Trie structure will look like this:
 #    root 
 #     |
 #     h
@@ -56,31 +57,31 @@ trie.add("hi")    #adds the word "hi" to the Trie
 #  y
 ```
 
-Using the `contain` function
+Using the `contain` function to check if a word is in your trie
 ```python
-#Using contain function with a word inside the Trie
+# Use contain function with a word inside the Trie
 trie.contain("hey")
 >>> TRUE
 
-#using contain function with a word not inside the Trie
+# Use contain function with a word not inside the Trie
 trie.contain("bye")
 >>> FALSE
 ```
 
-Using the `find_prefix` function
+Using the `find_prefix` function to find all words starting with a prefix
 ```python
-#finds all words starting with the prefix "h"
+# Finds all words starting with the prefix "h"
 trie.find_prefix("h")
 >>> ["hello", "hey"]
 ```
 
-Using the `delete` function
+Using the `delete` function to delete a word from your trie
 ```python
-#delete the word "hi" from the Trie 
+# Delete the word "hi" from the Trie 
 trie.delete("hi")
 >>> TRUE
 
-#The Trie structure after deleting the word "hi" will look like this:
+# The Trie structure after deleting the word "hi" will look like this:
 #    root 
 #     |
 #     h
