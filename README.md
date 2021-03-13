@@ -72,7 +72,7 @@ Using the `find_prefix` function to find all words starting with a prefix
 ```python
 # Finds all words starting with the prefix "h"
 trie.find_prefix("h")
->>> ["hello", "hey"]
+>>> ["hey", "hi"]
 ```
 
 Using the `delete` function to delete a word from your trie
